@@ -11,7 +11,7 @@ export default class Search extends React.Component {
     render() {
         return(
             <div className="search container">
-                <h1>Search</h1>
+                <h2>Search</h2>
             </div>
         )
     };

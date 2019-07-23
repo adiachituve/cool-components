@@ -1,18 +1,29 @@
-import React from 'React';
+import React, { useState, useEffect } from "react";
 
-export default class Photos extends React.Component {
+const Photos = () => {
+    const [Photos, setPhotos] = useState([]);
 
-    constructor(props) {
-        super(props);
-        this.state = {};
+    function fetchData() {
+        fetch("https://jsonplaceholder.typicode.com/photos")
+            .then(res => res.json())
+            .then(photos => setPhotos(photos));
     }
 
+    useEffect(() => {
+        fetchData();
+    }, []);
 
-    render() {
-        return(
-            <div className="photos container">
-                <h1>Photos</h1>
+
+    return (
+        <div className="photos container">
+            <h2>Photos</h2>
+            <div className="photos-wrapper">
+                {Photos.length ?
+                    Photos.map((photo)=> <img className="photo" src={photo.thumbnailUrl} key={photo.id}/>):
+                    <div>Loading Photos...</div>
+                }
             </div>
-        )
-    };
-}
+        </div>
+    );
+};
+export default Photos;

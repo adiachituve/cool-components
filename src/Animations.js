@@ -11,7 +11,7 @@ export default class Animations extends React.Component {
     render() {
         return(
             <div className="animations container">
-                <h1>Animations</h1>
+                <h2>Animations</h2>
             </div>
         )
     };
