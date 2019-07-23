@@ -1,6 +1,6 @@
 import React from 'React';
 
-export default class Photos extends React.Component {
+export default class Animations extends React.Component {
 
     constructor(props) {
         super(props);
@@ -10,8 +10,8 @@ export default class Photos extends React.Component {
 
     render() {
         return(
-            <div className="photos container">
-                <h1>Photos</h1>
+            <div className="animations container">
+                <h1>Animations</h1>
             </div>
         )
     };
