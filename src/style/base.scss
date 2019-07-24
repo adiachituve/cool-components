@@ -51,10 +51,12 @@ h2 {
 	text-align: center;
 }
 
-
+//*** Photo Component***
 .photos-wrapper {
 	display: grid;
 	grid-template-columns: repeat(5, 150px);
 	grid-gap: 20px 20px;
 	justify-content: center;
 }
+
+//*** Search Component***

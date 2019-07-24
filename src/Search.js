@@ -1,18 +1,47 @@
-import React from 'React';
+import React, {useState, useEffect} from "react";
 
-export default class Search extends React.Component {
+const Search = () => {
+    const [Comments, setComments] = useState([]);
+    const [InputValue, setInputValue] = useState('');
+    const [FilteredComments, setFilteredComments] = useState([]);
 
-    constructor(props) {
-        super(props);
-        this.state = {};
+    function fetchData() {
+        fetch("https://jsonplaceholder.typicode.com/comments")
+            .then(res => res.json())
+            .then(comments => {
+                setComments(comments);
+                setFilteredComments(comments)
+            });
     }
 
+    useEffect(() => {
+        fetchData();
+    }, []);
 
-    render() {
-        return(
-            <div className="search container">
-                <h2>Search</h2>
-            </div>
-        )
+
+    const handleChange = (event) => {
+        setInputValue(event.target.value);
     };
+
+    const handleSearch = () => {
+        setFilteredComments(
+            Comments.filter((comment) => comment.email.toLowerCase().search(
+                InputValue.toLowerCase()) !== -1)
+        );
+    };
+
+
+    return (
+        <div className="search container">
+            <h2>Search</h2>
+            <input type='text' value={InputValue} onChange={handleChange}/>
+            <button onClick={handleSearch}>SEARCH</button>
+            <ul className="search-results">
+                {FilteredComments.map(comment => <li key={comment.id}>{comment.email}</li>)}
+            </ul>
+        </div>
+    )
+
 }
+
+export default Search;
