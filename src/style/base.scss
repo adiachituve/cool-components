@@ -5,6 +5,7 @@ body {
 	margin: 0;
 	padding: 0;
 	color: #545454;
+    overflow: overlay;
 }
 
 #app {
@@ -60,3 +61,8 @@ h2 {
 }
 
 //*** Search Component***
+
+.search {
+  margin: 0 auto;
+  width: 350px;
+}

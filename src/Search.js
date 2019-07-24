@@ -20,13 +20,18 @@ const Search = () => {
 
 
     const handleChange = (event) => {
-        setInputValue(event.target.value);
+        let inputValue = event.target.value;
+        setInputValue(inputValue);
+        setFilteredComments(
+            Comments.filter(comment => comment.email.toLowerCase().startsWith(
+                inputValue.toLowerCase()))
+        );
     };
 
     const handleSearch = () => {
         setFilteredComments(
-            Comments.filter((comment) => comment.email.toLowerCase().search(
-                InputValue.toLowerCase()) !== -1)
+            Comments.filter(comment => comment.email.toLowerCase().startsWith(
+                InputValue.toLowerCase()))
         );
     };
 
@@ -36,6 +41,7 @@ const Search = () => {
             <h2>Search</h2>
             <input type='text' value={InputValue} onChange={handleChange}/>
             <button onClick={handleSearch}>SEARCH</button>
+            <h3>Search Results</h3>
             <ul className="search-results">
                 {FilteredComments.map(comment => <li key={comment.id}>{comment.email}</li>)}
             </ul>
