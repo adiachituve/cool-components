@@ -19,7 +19,7 @@ const Photos = () => {
             <h2>Photos</h2>
             <div className="photos-wrapper">
                 {Photos.length ?
-                    Photos.map((photo)=> <img className="photo" src={photo.thumbnailUrl} key={photo.id}/>):
+                    Photos.map((photo)=> <img src={photo.thumbnailUrl} key={photo.id}/>):
                     <div>Loading Photos...</div>
                 }
             </div>
