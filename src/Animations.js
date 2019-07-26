@@ -1,18 +1,19 @@
 import React from 'React';
 
-export default class Animations extends React.Component {
+const Animation = () => {
 
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
-
-    render() {
-        return(
-            <div className="animations container">
-                <h2>Animations</h2>
+    return (
+        <div className="animations container">
+            <h2>Animations</h2>
+            <button className='bttn grow'>GROW</button>
+            <button className='bttn shrink'>SHRINK</button>
+            <button className='bttn color'>COLOR</button>
+            <div className='rotating-container'>
+                <button className='bttn rotating'>ROTAT</button>
             </div>
-        )
-    };
+
+        </div>
+    )
 }
+
+export default Animation;
