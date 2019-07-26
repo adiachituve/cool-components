@@ -52,7 +52,9 @@ h2 {
   text-align: center;
 }
 
-//*** Photo Component***
+/***************************
+  *** Photo Component***
+****************************/
 .photos-wrapper {
   display: grid;
   grid-template-columns: repeat(5, 150px);
@@ -60,13 +62,59 @@ h2 {
   justify-content: center;
 }
 
-//*** Search Component***
+
+/***************************
+  *** Search Component***
+****************************/
 .search {
   margin: 0 auto;
-  width: 350px;
+  width: 390px;
+
+  input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #545454;
+    width: 284px;
+    padding: 5px;
+    border: 1px solid #a1a1a1;
+  }
+
+  button {
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
-//*** Animation Component***
+.autocomplete-results {
+  background-color: white;
+  width: 294px;
+  border: 1px solid #a1a1a1;
+  position: absolute;
+  z-index: 9;
+}
+
+.li-result {
+  padding: 5px;
+  font-size: 14px;
+
+  &:hover {
+    padding: 5px;
+    cursor: pointer;
+    background: #8bdae0;
+  }
+}
+.li-search {
+  margin-bottom: 22px;
+}
+
+/***************************
+  *** Animation Component***
+****************************/
 .animations {
   margin: 0 auto;
 }
@@ -115,8 +163,8 @@ h2 {
 
 .rotating {
   border-radius: 80px;
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   padding: 0;
 }
 

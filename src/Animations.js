@@ -9,7 +9,7 @@ const Animation = () => {
             <button className='bttn shrink'>SHRINK</button>
             <button className='bttn color'>COLOR</button>
             <div className='rotating-container'>
-                <button className='bttn rotating'>ROTAT</button>
+                <button className='bttn rotating'>ROTATE</button>
             </div>
 
         </div>
